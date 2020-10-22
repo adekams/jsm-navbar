@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <title>Navbar</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            cursor: pointer;
+        }
+        #navbar {
+            background:teal;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            color: #fafafa;
+            padding: 20px 20px;
+        }
+        
+        .nav-items {
+            display: none;
+            flex-direction: column;
+            text-align: center;
+            padding-top: 50px;
+        }
+        #nav-right {
+            margin-left: 0;
+        }
+        ul .nav-link {  
+            list-style-type: none;
+            color: #fafafa; 
+            margin-bottom: 20px;   
+        }
+        .nav-toggle {
+            display: initial;
+            align-self: flex-end;
+            position: absolute;
+            padding: 0;
+        }
+        ul .nav-link a, .nav-link {
+            text-decoration: none;
+            color: #fafafa;
+        }
+        #navbar .nav-brand {
+            font-weight: 900;
+            font-size: 18px;
+            font-style: italic;
+        }
+
+        .nav-link:hover {
+            color: rgb(77, 75, 75);
+        }
+        .nav-toggleShow {
+            display: block;
+        }
+
+
+        @media screen and (min-width: 829px) {
+            #navbar {
+                display: flex;
+                flex-direction: row;
+                padding: 25px 50px;
+            }
+            .nav-items {
+                display: flex;
+                flex-direction: row;
+                padding-top: 0;
+            }
+            #nav-right {
+                margin-left: auto;
+            }
+            ul {
+                display: flex;
+                flex-direction: row;
+                height: auto;
+            }
+            ul .nav-link{
+                padding: 0 12px;
+                margin-bottom: 0;
+            }
+            .nav-toggle {
+                display: none; 
+                cursor: pointer;
+            }
+
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        
+        <div class="navbar-brand">
+            <a href="" class="nav-link nav-brand">
+                Primula
+            </a>
+        </div>
+
+        <div class="nav-link nav-toggle">
+            <i class="fa fa-bars"></i>
+        </div>
+
+        <nav class="nav-items" id="nav-right">
+            <ul>
+                <li class="nav-link"><a href="">How it Works</a></li>
+                <li class="nav-link"><a href="">Developers</a></li>
+                <li class="nav-link"><a href="">Resources</a></li>
+                <li class="nav-link"><a href="">Services</a></li>
+                <li class="nav-link"><a href="">Pricing</a></li>
+                <li class="nav-link"><a href="">Login</a></li>
+                <li class="nav-link"><a href="">Get Started</a></li>
+            </ul>   
+        </nav>
+    </div>
+
+<script>
+    const mainNav = document.querySelector('.nav-items');
+    const navToggle = document.querySelector('.nav-toggle');
+
+    navToggle.addEventListener('click', () => {
+        mainNav.classList.toggle('nav-toggleShow')
+        mainNav.style.textAlign = 'center'
+    });
+</script>
+</body>
+</html>
